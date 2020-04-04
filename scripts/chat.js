@@ -3,6 +3,7 @@ class Chat {
         this.room = room;
         this.username = username;
         this.chats = database.collection("chats");
+        this.unsubscribe;
     }
     async addMessage(message) {
         const now = new Date();
@@ -17,7 +18,9 @@ class Chat {
         return response; // return this.
     }
     getMessages(callback) {
-        this.chats
+        this.unsubscribe = this.chats
+            .where("room", "==", this.room)
+            .orderBy("sent_at")
             .onSnapshot(snapshot => {
                 snapshot.docChanges().forEach(change => {
                     if (change.type === "added") {
@@ -27,9 +30,20 @@ class Chat {
                 });
             });
     }
+    updateUsername(username) {
+        this.username = username;
+
+    }
+    updateRoom(room) {
+        this.room = room;
+        
+        if (this.unsubscribe) {
+            this.unsubscribe();
+        }
+    }
 }
 
-const chatroom = new Chat("gaming", "shaun");
+const chatroom = new Chat("general", "shaun");
 
 chatroom.getMessages(data => {
     console.log(data);
