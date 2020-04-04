@@ -1,12 +1,23 @@
-.container{
-    max-width: 600px;
-  }
-  .btn{
-    background: crimson;
-    color: white;
-    outline: none !important;
-    box-shadow: none !important;
-  }
-  .btn:focus{
-    outline: none !important;
-  }
+.container {
+  max-width: 600px;
+}
+
+.btn {
+  background: crimson;
+  color: white;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.btn:focus {
+  outline: none !important;
+}
+
+.username {
+  font-weight: bold;
+}
+
+.time {
+  font-size: 0.5em;
+  color: #999;
+}

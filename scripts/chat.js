@@ -36,15 +36,9 @@ class Chat {
     }
     updateRoom(room) {
         this.room = room;
-        
+
         if (this.unsubscribe) {
             this.unsubscribe();
         }
     }
 }
-
-const chatroom = new Chat("general", "shaun");
-
-chatroom.getMessages(data => {
-    console.log(data);
-});
