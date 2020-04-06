@@ -1,4 +1,5 @@
 class Chat {
+    
     constructor(room, username) {
         this.room = room;
         this.username = username;

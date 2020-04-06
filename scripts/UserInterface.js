@@ -2,6 +2,9 @@ class UserInterface {
     constructor(list) {
         this.list = list;
     }
+    clear() {
+        this.list.innerHTML = "";
+    }
     render(data) {
         // todo: format (properly, with dateFNS or momentJS) sent at.
         const messageSentAt = data.sent_at.toDate();
