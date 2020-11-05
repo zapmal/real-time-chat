@@ -54,14 +54,12 @@
     </form>
   </div>
 
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
 
-
-  <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-firestore.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-analytics.js"></script>
   <script>
-    // Your web app's Firebase configuration
-    var firebaseConfig = {
+    
+    const firebaseConfig = {
       apiKey: "AIzaSyAYOr399ACgJSu-Nt0eAJnaBzsLLXRSiO8",
       authDomain: "modern-js-test.firebaseapp.com",
       databaseURL: "https://modern-js-test.firebaseio.com",
@@ -73,7 +71,6 @@
     };
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
-    firebase.analytics();
     const database = firebase.firestore();
   </script>
   <script src="scripts/chat.js"></script>
